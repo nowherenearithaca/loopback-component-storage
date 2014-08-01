@@ -3,7 +3,7 @@ var loopback = require('loopback')
 
 var path = require('path');
 
-app.use(app.router);
+//deprecated app.use(app.router);
 
 // expose a rest api
 app.use('/api', loopback.rest());
@@ -11,9 +11,9 @@ app.use('/api', loopback.rest());
 app.use(loopback.static(path.join(__dirname, 'public')));
 
 
-app.configure(function () {
+//deprecated? app.configure(function () {
   app.set('port', process.env.PORT || 3000);
-});
+//});
 
 var ds = loopback.createDataSource({
   connector: require('../index'),
